@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class MovieList {
     private String name;
@@ -29,4 +30,6 @@ public class MovieList {
     public void setVideos(List<Movie> videos) {
         this.videos = videos;
     }
+
+
 }

@@ -14,6 +14,12 @@ public class Kata6 {
     public static String execute() {
         List<Movie> movies = DataUtil.getMovies();
 
-        return "someUrl";
+        return movies.stream()
+                .map(boxList -> boxList.getBoxarts())
+                .flatMap(boxs -> boxs.stream())
+                .map(ur -> ur.getUrl())
+                .reduce((a , b) -> (a.length() > b.length()) ? a : b)
+                .get();
+
     }
 }
